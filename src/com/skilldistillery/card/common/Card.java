@@ -10,6 +10,14 @@ public class Card {
 		rank = r;
 	}
 
+	public Rank getRank() {
+		return rank;
+	}
+
+	public Suit getSuit() {
+		return suit;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
