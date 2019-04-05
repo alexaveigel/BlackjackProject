@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class Hand {
 	private int value;
-	List<Card> hand = new ArrayList<Card>();
+	private List<Card> hand = new ArrayList<Card>();
 
 	public Hand() {
 
@@ -28,6 +28,11 @@ public abstract class Hand {
 	public List<Card> getCards() {
 		return hand;
 
+	}
+	public void showAllCards() {
+		for (Card card : hand) {
+			System.out.println(card);
+		}
 	}
 
 	@Override

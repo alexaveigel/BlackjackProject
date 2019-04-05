@@ -26,21 +26,21 @@ public class GameDriver {
 	
 	public void initRound() {
 		Deck d = new Deck();
-		BlackjackHand dealerHand = new BlackjackHand();
-		BlackjackHand userHand = new BlackjackHand();
+		Player player = new Player();
+		Dealer dealer = new Dealer();
 		d.shuffle();
 		
-		dealerHand.addCard(d.dealCard());
-		dealerHand.addCard(d.dealCard());
-		userHand.addCard(d.dealCard());
-		userHand.addCard(d.dealCard());
+		player.addCardToHand(d.dealCard());
+		dealer.addCardToHand(d.dealCard());
+		player.addCardToHand(d.dealCard());
+		dealer.addCardToHand(d.dealCard());
 		
-		System.out.println(dealerHand.printDealerHand());
-		System.out.println(userHand.printUserHand());
-		
+		player.printPlayerHand();
+		dealer.printHiddenHand();
 	}
 	
 	public void menu() {
+		
 		
 		
 		
