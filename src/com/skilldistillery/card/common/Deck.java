@@ -23,7 +23,7 @@ public class Deck {
 
 	}
 
-	public Card dealCard() {
+	public Card getCard() {
 		return deck.remove(0);
 
 	}

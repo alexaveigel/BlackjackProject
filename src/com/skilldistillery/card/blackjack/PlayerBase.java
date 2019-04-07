@@ -20,5 +20,8 @@ public abstract class PlayerBase {
 	public void setHand(BlackjackHand hand) {
 		this.hand = hand;
 	}
-
+	public int checkHand() {
+		return hand.getHandValue();
+	}
+	
 }

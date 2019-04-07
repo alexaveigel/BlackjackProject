@@ -3,12 +3,10 @@ package com.skilldistillery.card.blackjack;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.skilldistillery.card.common.Deck;
-
 public class GameDriver {
 	private Player player;
 	private Dealer dealer;
-	private Deck d;
+	
 	
 	
 	Scanner sc = new Scanner(System.in);
@@ -45,16 +43,14 @@ public class GameDriver {
 	}
 
 	public void initRound() {
-		d = new Deck();
 		player = new Player();
 		dealer = new Dealer();
-		d.shuffle();
-
+		
 		System.out.println("\nDealing hand...\n");
-		player.addCardToHand(d.dealCard());
-		dealer.addCardToHand(d.dealCard());
-		player.addCardToHand(d.dealCard());
-		dealer.addCardToHand(d.dealCard());
+		player.addCardToHand(dealer.dealCard());
+		dealer.addCardToHand(dealer.dealCard());
+		player.addCardToHand(dealer.dealCard());
+		dealer.addCardToHand(dealer.dealCard());
 
 		player.printPlayerHand();
 		dealer.printHiddenHand();
@@ -71,7 +67,7 @@ public class GameDriver {
 				System.out.println("\n");
 				switch (choice) {
 				case 1:
-					player.addCardToHand(d.dealCard());
+					player.addCardToHand(dealer.dealCard());
 					player.printPlayerHand();
 					b = false;
 					break;
