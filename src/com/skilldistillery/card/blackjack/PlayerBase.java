@@ -24,4 +24,5 @@ public abstract class PlayerBase {
 		return hand.getHandValue();
 	}
 	
+	
 }

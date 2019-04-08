@@ -56,6 +56,17 @@ public class GameDriver {
 		dealer.printHiddenHand();
 		menu();
 	}
+	
+	public void checkForWin() {
+		if(player.checkHand() > dealer.checkHand()) {
+			System.out.println("You win!\n");
+		}else if(dealer.checkHand() > player.checkHand()) {
+			System.out.println("You lose!\n");
+		}else {
+			System.out.println("Its a draw.\n");
+		}
+	}
+	
 
 	public void menu() {
 		boolean b = true;
@@ -69,10 +80,27 @@ public class GameDriver {
 				case 1:
 					player.addCardToHand(dealer.dealCard());
 					player.printPlayerHand();
+					if(player.checkHand() < 21) {
+						menu();
+						
+					}else if(player.checkHand() > 21){
+						System.out.println("Sorry, you lost.\n");
+						launch();
+					}else if(player.checkHand() == 21) {
+						System.out.println("You win!");
+						launch();
+					}
 					b = false;
 					break;
 				case 2:
 					System.out.println("You stayed.");
+					System.out.println("\n");
+					player.printPlayerHand();
+					System.out.println("\n");
+					dealer.printDealerHand();
+					dealer.dealerHit();
+					checkForWin();
+					launch();
 					b = false;
 					break;
 				case 3:
