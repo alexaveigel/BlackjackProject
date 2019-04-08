@@ -30,7 +30,7 @@ public class Dealer extends PlayerBase {
 		boolean b = true;
 		while (b) {
 			if (checkHand() > 21) {
-				System.out.println("Dealer bust, you win.\n");
+				System.out.println("\nDealer bust, you win.\n");
 				b = false;
 				g.launch();
 			} else if (checkHand() < 17) {
@@ -40,7 +40,7 @@ public class Dealer extends PlayerBase {
 				
 			} else if (checkHand() >= 17) {
 				// dealer stays
-				System.out.println("The dealer stays.\n");
+				System.out.println("\nThe dealer stays.\n");
 				b = false;
 
 			}
