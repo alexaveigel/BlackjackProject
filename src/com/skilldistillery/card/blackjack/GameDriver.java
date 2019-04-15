@@ -12,6 +12,7 @@ public class GameDriver {
 	public void launch() {
 		boolean b = true;
 		int choice = 0;
+		
 		System.out.println("Welcome to Blackjack.\n");
 		while (b) {
 			try {
@@ -41,6 +42,7 @@ public class GameDriver {
 	}
 
 	public void initRound() {
+		
 		player = new Player();
 		dealer = new Dealer();
 
@@ -70,6 +72,7 @@ public class GameDriver {
 
 		if (player.checkHand() == 21) {
 			System.out.println("\nYou win!\n");
+			launch();
 		} else {
 
 		}
